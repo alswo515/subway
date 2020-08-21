@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 GAME</title>
+</head>
+<body>
+
+
+    <script>
+        var me = prompt('가위바위보 게임 시작! \n가위, 바위, 보 중에 하나를 입력하세요', '가위');
+        var com;
+        var com2;
+
+        function rspGame(){
+            document.write('나는 '+me+'를 냈다!<br>');
+            
+            com = Math.floor(Math.random()*3)+1;
+            
+            switch(me) {
+            case '가위':
+                me = 1;
+                break;
+            case '바위':
+                me = 2;
+                break;
+            case '보':
+                me = 3;
+            }
+
+            switch(com) {
+                case 1:
+                    com2 = '가위';
+                    break;
+                case 2:
+                    com2 = '바위';
+                    break;
+                case 3:
+                    com2 = '보';
+            }
+            document.write('컴퓨터는 '+com2+'를 냈다!<br>')
+
+            if( (me==1 && com==3) || (me==2 && com==1) || (me==3 && com==2) ) {
+                document.write('결과는 이겼습니다!');
+            } else if( me == com ) {
+                document.write('결과는 비겼습니다!');
+            } else {
+                document.write('결과는 졌습니다!');
+            }
+        }
+        rspGame();
+        
+    </script>
+</body>
+</html>
